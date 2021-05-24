@@ -1,4 +1,4 @@
-function ping(address) {
+export function ping(address) {
   return new Promise((resolve, reject) => {
     let http = new XMLHttpRequest();
     http.open("GET", address, true)

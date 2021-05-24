@@ -12,50 +12,69 @@ js-ping is a simple tool used to check whether the network is smooth on the fron
 
 ## Usage
 
-```html
-<script src="../ping.js"></script>
-<script>
-ping("<your-address>")
-  .then((response) => {
-   	// ...
-  })
-  .catch((error) => {
-   	// ...
-  })
-</script>
+Install the package first.
+
+```bash
+npm i js-ping
+```
+
+Import package.
+
+```javascript
+import { ping } from "js-ping";
+```
+
+Then use it.
+
+```javascript
+ping("http://localhost:5000").then(res => {
+  console.log(res)
+})
+  .catch(err => {
+  console.log(err)
+})
+```
+
+If successful, the returned result is in json format.
+
+```json
+{
+  "status": 200,
+  "response": "Hello, World !"
+}
+```
+
+If it fails, the return result is in string format.
+
+```json
+"error"
+"timeout"
 ```
 
 
 
 ## Example
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>js-ping-exmaple</title>
-</head>
-<body>
-<div class="container">
-  The http://localhost address is requested by default, and port 80 can be started and closed to test its effect.
-  <div>Response :</div>
-  <div id="response"></div>
-</div>
+```vue
+<template>
+  <div id="app">
+    <a href="https://github.com/Kuari/js-ping" target="_blank">js-ping</a>
+  </div>
+</template>
 
-<script src="../ping.js"></script>
 <script>
-ping("http://localhost:80")
-  .then((response) => {
-    document.getElementById("response").innerHTML = JSON.stringify(response);
-  })
-  .catch((error) => {
-    document.getElementById("response").innerHTML = error;
-  })
+import { ping } from "js-ping";
+
+export default {
+  mounted() {
+    ping("http://localhost:5000").then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+  }
+}
 </script>
-</body>
-</html>
 ```
-
-
 

@@ -1,0 +1,23 @@
+{
+  "name": "js-ping",
+  "version": "1.0.1",
+  "description": "js-ping is a simple tool used to check whether the network is smooth on the front end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuari/js-ping.git"
+  },
+  "keywords": [
+    "js",
+    "ping"
+  ],
+  "author": "Kuari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kuari/js-ping/issues"
+  },
+  "homepage": "https://github.com/Kuari/js-ping#readme"
+}
